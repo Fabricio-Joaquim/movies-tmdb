@@ -1,5 +1,5 @@
-import { baseAPI } from '@/Service/baseAPI'
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
+/* import { baseAPI } from '@/Service/baseAPI'
+ */import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
 
 export default function page({
     pageComponentProps
@@ -13,12 +13,12 @@ export default function page({
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 
-    const result = (await baseAPI.get("ListMovies")).data
-
+/*     const result = (await baseAPI.get("ListMovies")).data
+ */
     return {
         props: {
             pageComponentProps: {
-                result
+                
             }
         }
     }
