@@ -9,7 +9,7 @@ const APIS = () =>{
         baseURL: process.env.BASE_URL,
         params: {
             api_key: process.env.API_KEY,
-            language: "en-US"
+            language: "pt-BR"
         },
     });
 

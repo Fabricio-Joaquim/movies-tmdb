@@ -1,10 +1,3 @@
-/* 
-tr	Turco
-uk	
-Ucraniano
-vi	Vietnamita
-*/
-
 const country = [
     {
         nome: "Árabe",

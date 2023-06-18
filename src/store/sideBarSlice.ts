@@ -1,4 +1,4 @@
-import { Genre } from '@/interfaces/IGenere';
+import { Genre } from '@/interfaces/IGenre';
 import { APIS } from '@/Service/baseAPI';
 import { StateCreator } from 'zustand';
 

@@ -2,7 +2,7 @@ import { IResultRequest } from '@/interfaces/IRequest'
 import { GetServerSidePropsContext } from 'next'
 import { SideBar } from '@/components/SideBar'
 import { Header } from '@/components/Header'
-import { Genre } from '@/interfaces/IGenere'
+import { Genre } from '@/interfaces/IGenre'
 import { useAppStore } from '@/store/store'
 import { APIS } from '@/Service/baseAPI'
 import { Card } from '@/components/Card'
@@ -26,6 +26,7 @@ export default function Home({ result, genereMovies }: { result: IResultRequest,
                     image={item.poster_path}
                     title={item.title}
                     description={item.overview}
+                    {...item}
                   />
                 </div>
               )
