@@ -2,7 +2,7 @@ import { IDescriptionMovie } from '@/interfaces/IDescriptionMovie'
 import { IRecommandationsList } from '@/interfaces/IRecommandations'
 import DurationMovieComponent from './DurationMovieComponent'
 import { GetServerSidePropsContext } from 'next'
-import GenreComponent from './GenereComponent'
+import GenreComponent from './GenericComponent'
 import { APIS } from '@/Service/baseAPI'
 import { FaStar } from "react-icons/fa"
 import Image from 'next/image'
