@@ -1,42 +1,40 @@
-import { IDescriptionMovie } from '@/interfaces/IDescriptionMovie'
 import { IRecommandationsList } from '@/interfaces/IRecommandations'
-import DurationMovieComponent from './DurationMovieComponent'
+import { IDescriptionMovie } from '@/interfaces/IDescriptionMovie'
+import { RecomendationMoviesCarousel } from './Recomendation'
 import { GetServerSidePropsContext } from 'next'
-import GenreComponent from './GenericComponent'
+import { FaArrowLeft } from "react-icons/fa"
 import { APIS } from '@/Service/baseAPI'
-import { FaStar } from "react-icons/fa"
+import { useRouter } from 'next/router'
+import InfoMovie from './InfoMovie'
 import Image from 'next/image'
-import moment from 'moment'
 import React from "react"
 
-export default function page({ dataMovie, recommendations }: { dataMovie: IDescriptionMovie, recommendations: IRecommandationsList }) {
+interface IProps {
+    dataMovie: IDescriptionMovie,
+    recommendations: IRecommandationsList
+}
+
+export default function page({ dataMovie, recommendations }: IProps) {
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { back } = useRouter()
+
     return (
-        <div className='flex items-center justify-center w-full relative'>
-            <Image className="relative bg-cover" src={`${process.env.NEXT_PUBLIC_IMG_API}${dataMovie.backdrop_path}`} alt={dataMovie.title} width={1920} height={1080} />
-            <div className='font-light  absolute z-10 bottom-0 bg-gradient-to-t from-slate-800 to-transparent w-full pl-2'>
-                <p className='text-7xl font-bold'>{dataMovie.title}</p>
-                <div className='flex gap-x-20'>
-                    <div className='flex gap-x-2 items-center'>
-                        <FaStar color='yellow' />
-                        <p className='font-semibold'>{dataMovie.vote_average}</p>
-                        <p className='text-sm'>| {dataMovie.popularity}</p>
-                    </div>
-                    <div className='flex gap-x-2 items-center'>
-                        <DurationMovieComponent runtime={dataMovie.runtime} />
-                        • <GenreComponent genericList={dataMovie.genres} />
-                        • <p>{moment(dataMovie.release_date).format("YYYY")}</p>
-                    </div>
-                </div>
-                <p className='text-sm'>{dataMovie.overview}</p>
-                <GenreComponent genericList={dataMovie.spoken_languages} nameList='Idiomas' />
-                <p>
-
-
-                </p>
-                <p>sasad</p>
-
+        <div className="image-wrapper h-full w-full overflow-hidden absolut">
+            <Image
+                src={`${process.env.NEXT_PUBLIC_IMG_API}${dataMovie.backdrop_path}`}
+                alt="Imagem em tela cheia"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+            />
+            <FaArrowLeft className='absolute top-3 left-3 hover:fill-slate-600 duration-150 hover:translate-x-5' onClick={() => back()} size={30} />
+            <div className='font-light absolute z-10 bottom-0 bg-gradient-to-t from-slate-800 grid grid-cols-2 to-transparent w-full pb-5 pl-5'>
+                <InfoMovie dataMovie={dataMovie} />
+                <RecomendationMoviesCarousel recommendations={recommendations} />
             </div>
         </div>
+
     )
 }
 
