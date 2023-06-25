@@ -24,9 +24,9 @@ export interface Result {
 }
 
 export enum MediaType {
-    Movie = "movie",
+    Movie = 'movie',
 }
 
 export enum OriginalLanguage {
-    En = "en",
+    En = 'en',
 }

@@ -1,7 +1,7 @@
-import { IResultRequest } from '@/interfaces/IRequest';
-import { ICategory } from "@/interfaces/ICategory";
-import { APIS } from "@/Service/baseAPI";
-import { StateCreator } from "zustand";
+import { IResultRequest } from '@/interfaces/IRequest'
+import { ICategory } from '@/interfaces/ICategory'
+import { APIS } from '@/Service/baseAPI'
+import { StateCreator } from 'zustand'
 
 export type movieByCategory = {
     category_ID: number,
@@ -21,7 +21,7 @@ export const listMoviesSlice: StateCreator<movieByCategory> = ((set, get) => ({
         const { baseAPI } = APIS()
 
         if (get().category_ID === id) {
-            const result = (await baseAPI.get("ListMovies")).data
+            const result = (await baseAPI.get('ListMovies')).data
             set({ listMovies: result, category_ID: id })
         }
 

@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
 export default function Movie() {
 
-    const router = useRouter();
-    const { id_movie } = router.query;
+    const router = useRouter()
+    const { id_movie } = router.query
 
     return (
         <div>

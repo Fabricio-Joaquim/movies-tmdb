@@ -1,5 +1,5 @@
-import { Result } from '@/interfaces/IRecommandations'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { Result } from '@/interfaces/IRecommandations'
 import { Carousel } from '@trendyol-js/react-carousel'
 import Image from 'next/image'
 import React from 'react'
@@ -9,7 +9,7 @@ const Recommendation = ({ recommendations }: { recommendations: Result[] }) => {
     if (!recommendations?.length) return null
 
     return (
-        <div className='bottom-0'>
+        <div className='self-end'>
             <p className='text-base font-light ml-10'>Relacionados</p>
             <Carousel show={3.5} slide={3} swiping={true}
                 className='w-full h-80 carousel-recomandations'

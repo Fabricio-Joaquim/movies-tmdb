@@ -1,22 +1,30 @@
-import React from 'react'
+import { useEffect } from 'react'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import Router from 'next/router'
+const NProgressBar = () => {
+  useEffect(() => {
+    NProgress.configure({ showSpinner: false })
+    const start = () => {
+      NProgress.start()
+    }
 
-export const Loading = () => {
-    return (
-        <div className=' h-screen w-screen justify-center flex items-center'>
+    const end = () => {
+      NProgress.done()
+    }
 
-        <div className="spinner-container">
-            <div className="spinner">
-                <div className="spinner">
-                    <div className="spinner">
-                        <div className="spinner">
-                            <div className="spinner">
-                                <div className="spinner"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        )
+    Router.events.on('routeChangeStart', start)
+    Router.events.on('routeChangeComplete', end)
+    Router.events.on('routeChangeError', end)
+
+    return () => {
+      Router.events.off('routeChangeStart', start)
+      Router.events.off('routeChangeComplete', end)
+      Router.events.off('routeChangeError', end)
+    }
+  }, [])
+
+  return null
 }
+
+export default NProgressBar

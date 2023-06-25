@@ -11,8 +11,8 @@ export interface ICategory {
 }
 
 export enum ISO639_1 {
-    En = "en",
-    Fr = "fr",
+    En = 'en',
+    Fr = 'fr',
 }
 
 export interface Item {
@@ -34,5 +34,5 @@ export interface Item {
 }
 
 export enum MediaType {
-    Movie = "movie",
+    Movie = 'movie',
 }

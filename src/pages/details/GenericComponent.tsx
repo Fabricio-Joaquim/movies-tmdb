@@ -6,7 +6,7 @@ const MapComponentName = ({ genericList, nameList }: { genericList: SpokenLangua
     <p className='text-base'>
     {
             genericList?.map((item: SpokenLanguage | Genre, index: number) =>
-                <React.Fragment key={item.name}>{item.name}{genericList.length - 1 === index ? "" : ", "} </React.Fragment>
+                <React.Fragment key={item.name}>{item.name}{genericList.length - 1 === index ? '' : ', '} </React.Fragment>
             )}
     </p>
 

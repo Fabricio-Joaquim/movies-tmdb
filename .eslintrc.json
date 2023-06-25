@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    //removendo ponto e virgula
+    "semi": ["error", "never"],
+    //removendo aspas duplas
+    "quotes": ["error", "single"]
+
+  }
 }

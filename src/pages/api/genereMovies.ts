@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next"
-import { APIS } from "@/Service/baseAPI"
-import { Genre } from "@/interfaces/IGenre"
+import { NextApiRequest, NextApiResponse } from 'next'
+import { APIS } from '@/Service/baseAPI'
+import { Genre } from '@/interfaces/IGenre'
 
 const { TMDBAPI } = APIS()
 export default async function genreMovie(req: NextApiRequest, res: NextApiResponse<Genre[]>) {

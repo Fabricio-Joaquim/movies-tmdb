@@ -1,6 +1,6 @@
-import { Genre } from '@/interfaces/IGenre';
-import { APIS } from '@/Service/baseAPI';
-import { StateCreator } from 'zustand';
+import { Genre } from '@/interfaces/IGenre'
+import { APIS } from '@/Service/baseAPI'
+import { StateCreator } from 'zustand'
 
 export type sideBarSliceType = {
     genereMovies: Genre[];

@@ -2,12 +2,12 @@ import { IRecommandationsList } from '@/interfaces/IRecommandations'
 import { IDescriptionMovie } from '@/interfaces/IDescriptionMovie'
 import { GetServerSidePropsContext } from 'next'
 import Recommendation from './Recommendation'
-import { FaArrowLeft } from "react-icons/fa"
+import { FaArrowLeft } from 'react-icons/fa'
 import { APIS } from '@/Service/baseAPI'
 import { useRouter } from 'next/router'
 import InfoMovie from './InfoMovie'
 import Image from 'next/image'
-import React from "react"
+import React from 'react'
 
 interface IProps {
     dataMovie: IDescriptionMovie,

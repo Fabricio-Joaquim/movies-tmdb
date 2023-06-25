@@ -1,8 +1,8 @@
 import { IDescriptionMovie } from '@/interfaces/IDescriptionMovie'
 import DurationMovieComponent from './DurationMovieComponent'
 import GenreComponent from './GenericComponent'
-import { FaStar } from "react-icons/fa"
-import React, { memo } from "react"
+import { FaStar } from 'react-icons/fa'
+import React, { memo } from 'react'
 import moment from 'moment'
 
 const InfoMovie = ({ dataMovie }: { dataMovie: IDescriptionMovie }) =>
@@ -17,7 +17,7 @@ const InfoMovie = ({ dataMovie }: { dataMovie: IDescriptionMovie }) =>
                 <div className='flex gap-x-2 items-center'>
                     <DurationMovieComponent runtime={dataMovie?.runtime} />
                     • <GenreComponent genericList={dataMovie?.genres} />
-                    • <p>{moment(dataMovie?.release_date).format("YYYY")}</p>
+                    • <p>{moment(dataMovie?.release_date).format('YYYY')}</p>
                 </div>
             </div>
         <p className='text-sm'>{dataMovie?.overview}</p>

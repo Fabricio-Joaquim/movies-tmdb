@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { APIS } from "@/Service/baseAPI";
+import { NextApiRequest, NextApiResponse } from 'next'
+import { APIS } from '@/Service/baseAPI'
 
 export default async function searchMovie(req: NextApiRequest, res: NextApiResponse) {
 

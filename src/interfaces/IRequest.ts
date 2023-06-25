@@ -23,8 +23,8 @@ export interface Result {
 }
 
 export enum OriginalLanguage {
-    En = "en",
-    Es = "es",
-    Ko = "ko",
-    Nl = "nl",
+    En = 'en',
+    Es = 'es',
+    Ko = 'ko',
+    Nl = 'nl',
 }

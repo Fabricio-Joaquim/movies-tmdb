@@ -1,5 +1,5 @@
-import { StateCreator } from "zustand";
-import { useAppStore } from "./store";
+import { StateCreator } from 'zustand'
+import { useAppStore } from './store'
 
 export type SearchState = {
     search: string;
@@ -7,9 +7,9 @@ export type SearchState = {
 };
 
 export const searchSlice: StateCreator<SearchState> = (set) => ({
-    search: "",
+    search: '',
     setSearch: (search) => set({ search }),
-});
+})
 
 
 

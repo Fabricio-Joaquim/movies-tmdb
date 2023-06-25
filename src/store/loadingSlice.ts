@@ -1,4 +1,4 @@
-import { StateCreator } from "zustand";
+import { StateCreator } from 'zustand'
 
 export interface LoadingState {
     loading: boolean;
@@ -8,4 +8,4 @@ export interface LoadingState {
 export const createLoadingSlice: StateCreator<LoadingState> = (set, get) => ({
     loading: false,
    setLoading: () => set({ loading: !get().loading }),
-});
+})

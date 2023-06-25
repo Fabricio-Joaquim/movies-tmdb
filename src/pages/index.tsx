@@ -41,8 +41,8 @@ export default function Home({ result, genereMovies }: { result: IResultRequest,
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const { baseAPI } = APIS()
 
-  const result = (await baseAPI.get("ListMovies")).data
-  const response = (await baseAPI.get("/genereMovies")).data.genres
+  const result = (await baseAPI.get('ListMovies')).data
+  const response = (await baseAPI.get('/genereMovies')).data.genres
 
   return {
     props: { result, genereMovies: response },

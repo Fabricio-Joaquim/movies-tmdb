@@ -1,7 +1,7 @@
-import { Genre } from '@/interfaces/IGenre';
-import { useAppStore } from "@/store/store"
-import { useStore } from '@/store/useStore';
-import React from "react"
+import { Genre } from '@/interfaces/IGenre'
+import { useAppStore } from '@/store/store'
+import { useStore } from '@/store/useStore'
+import React from 'react'
 
 interface IProps {
     genereMovies: Genre[]
@@ -18,7 +18,7 @@ export const SideBar = ({genereMovies}:IProps) => {
                         return (
                             <React.Fragment key={item.id}>
                                 <li onClick={() => changeCatecory(item.id)} key={item.id}
-                                    className={`text-white item text-xl cursor-pointer font-bold hover:text-gray-400`}>
+                                    className={'text-white item text-xl cursor-pointer font-bold hover:text-gray-400'}>
                                     {item.name}</li>
                                 <span className={`w-1/2 h-1 rounded-full ${activeID === item.id ? 'animate-pulse item-selected' : 'hidden'}`} />
                             </React.Fragment>
