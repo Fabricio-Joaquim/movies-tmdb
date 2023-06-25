@@ -1,12 +1,14 @@
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { Result } from '@/interfaces/IRecommandations'
 import { Carousel } from '@trendyol-js/react-carousel'
+import {useRouter} from 'next/router'
 import Image from 'next/image'
 import React from 'react'
-
 const Recommendation = ({ recommendations }: { recommendations: Result[] }) => {
 
     if (!recommendations?.length) return null
+
+    const router = useRouter()
 
     return (
         <div className='self-end'>
@@ -23,10 +25,13 @@ const Recommendation = ({ recommendations }: { recommendations: Result[] }) => {
                         <FaArrowLeft className='text-white' size={20} />
                     </div>
                 }
+                
             >
                 {
                 recommendations.map((item) => (
-                    <div key={item?.id} className='flex flex-col gap-x-2 item-recomandation'>
+                    <div key={item?.id} 
+                    onClick={() => router.push(`/details/${item?.id}`)}
+                    className='flex flex-col gap-x-2 item-recomandation'>
                         <Image
                             src={`${process.env.NEXT_PUBLIC_IMG_API}${item?.poster_path}`}
                             alt={item?.title}

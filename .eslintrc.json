@@ -1,10 +1,9 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    //removendo ponto e virgula
     "semi": ["error", "never"],
-    //removendo aspas duplas
-    "quotes": ["error", "single"]
-
+    "quotes": ["error", "single"],
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }

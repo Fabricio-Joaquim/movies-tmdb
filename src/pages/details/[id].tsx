@@ -16,7 +16,6 @@ interface IProps {
 
 export default function page({ dataMovie, recommendations }: IProps) {
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { back } = useRouter()
 
     return (

@@ -16,8 +16,5 @@ export const createLanguageSlice: StateCreator<LanguageState> = (set, get) => ({
         
 
     },
-
-
-    //        getMovies();
 })
 
