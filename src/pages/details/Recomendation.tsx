@@ -4,7 +4,7 @@ import { Carousel } from '@trendyol-js/react-carousel'
 import Image from 'next/image'
 import React from 'react'
 
-export const RecomendationMoviesCarousel = ({ recommendations }: { recommendations: IRecommandationsList }) => {
+const RecomendationMoviesCarousel = ({ recommendations }: { recommendations: IRecommandationsList }) => {
     return (
         <div className='bottom-0'>
             <p className='text-base font-light ml-10'>Relacionados</p>
@@ -38,3 +38,5 @@ export const RecomendationMoviesCarousel = ({ recommendations }: { recommendatio
         </div>
     )
 }
+
+export default RecomendationMoviesCarousel
