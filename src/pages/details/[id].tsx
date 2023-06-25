@@ -31,7 +31,7 @@ export default function page({ dataMovie, recommendations }: IProps) {
             <FaArrowLeft className='absolute top-3 left-3 hover:fill-slate-600 duration-150 hover:translate-x-5' onClick={() => back()} size={30} />
             <div className='font-light absolute z-10 bottom-0 bg-gradient-to-t from-slate-800 grid grid-cols-2 to-transparent w-full pb-5 pl-5'>
                 <InfoMovie dataMovie={dataMovie} />
-                <Recommendation recommendations={recommendations} />
+                {!!recommendations?.results?.length && <Recommendation recommendations={recommendations.results} />}
             </div>
         </div>
 
