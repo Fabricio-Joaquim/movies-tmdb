@@ -24,7 +24,6 @@ export default function Home({ result, genereMovies }: { result: IResultRequest,
                 <div key={item.id} className="flex flex-col items-center justify-center">
                   <Card
                     image={item.poster_path}
-                    title={item.title}
                     description={item.overview}
                     {...item}
                   />
