@@ -15,7 +15,7 @@ export const Card = ({ image, description, id }: ICard) => {
     }
 
     return (
-        <Link href={`/details/${id}`}>
+        <Link className='movie' href={`/details/${id}`}>
             <div className="container cursor-pointer">
                 <div className="box hover:shadow-slate-300">
                     <div className='flex relative'>

@@ -9,7 +9,7 @@ export const InputSearch = () => {
 
     return (
         <form className="input-group">
-            <input className="input" id="Email" value={search} name="Email" onChange={e => setSearch(e.target.value)} placeholder="uiverse@verse.io" autoComplete="off" />
+            <input className="input" id="movie-search" value={search} name="movie-search" onChange={e => setSearch(e.target.value)} placeholder="uiverse@verse.io" autoComplete="off" />
             <input className="input-button" onClick={searchMovie} type='submit' value="Search" />
         </form>
     )
