@@ -1,3 +1,4 @@
+import { RoutersENum } from '@/Enums/routersEnum'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -15,7 +16,7 @@ export const Card = ({ image, description, id }: ICard) => {
     }
 
     return (
-        <Link className='movie' href={`/details/${id}`}>
+        <Link className='movie' href={`${RoutersENum.DETAILS}/${id}`}>
             <div className="container cursor-pointer">
                 <div className="box hover:shadow-slate-300">
                     <div className='flex relative'>

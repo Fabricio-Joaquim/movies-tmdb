@@ -1,41 +1,22 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { RoutersENum } from '@/Enums/routersEnum'
+import { FaUserCircle } from 'react-icons/fa'
 import { InputSearch } from '../InputSearch'
 import { useAppStore } from '@/store/store'
 import Logo from '../../../assets/logo.png'
-import country from '@/pages/api/mock'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Header = () => {
-    const { setLanguage } = useAppStore()
-    const handleDropdown = (e: any) => {
-        const dropdown = document.getElementById(e?.target?.dataset?.dropdownToggle)
-        if (dropdown?.classList?.contains('hidden')) {
-            dropdown?.classList?.remove('hidden')
-        } else {
-            dropdown?.classList?.add('hidden')
-        }
-    }
-    const onCLick = (sigla: string, e: any) => {
-        setLanguage(sigla); handleDropdown(e)
-    }
-
 
     return (
         <div className='flex justify-between mx-2 lg:mx-10'>
-            <Image alt='logo' src={Logo} height={100} width={120} className='cursor-pointer lg:ml-10'/>
+            <Image alt='logo' src={Logo} height={100} width={120} className='cursor-pointer lg:ml-10' />
             <InputSearch />
-            <div className='relative hidden lg:block'>
-                <button onClick={handleDropdown} data-dropdown-toggle='dropdown'>Idioma</button>
-                <div id='dropdown' className='hidden absolute top-10 z-50 right-0 bg-gray-100 language-list'>
-                    <ul className='flex flex-col justify-start h-96 overflow-scroll w-96'>
-                        {
-                            country.map((pais) =>
-                                (<li key={pais.nome} onClick={(e) => onCLick(pais.sigla, e)} className='flex w-full justify-start gap-4'><Image alt='pt' src={pais.bandeira} width={20} height={40} />{pais.nome}</li>)
-
-                            )}
-                    </ul>
-                </div>
-            </div>
+            <Link href={RoutersENum.LOGIN} className='hover:text-fuchsia-400 duration-300 items-center justify-center flex flex-col hover:scale-110'>
+                <FaUserCircle size={50} />
+                Entrar
+            </Link>
         </div>
     )
 }
