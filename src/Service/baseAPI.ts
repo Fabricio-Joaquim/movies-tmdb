@@ -11,6 +11,10 @@ const APIS = () =>{
             api_key: process.env.API_KEY,
             language: 'pt-BR'
         },
+        headers:{
+            'Content-Type': 'application/json;charset=utf-8',
+            Authorization: `Bearer ${process.env.API_TOKEN}`
+        }
     })
 
     return { baseAPI, TMDBAPI }
