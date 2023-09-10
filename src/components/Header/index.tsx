@@ -21,10 +21,10 @@ const Header = () => {
 
 
     return (
-        <div className='flex justify-between mx-10'>
-            <Image alt='logo' src={Logo} height={100} width={120} className='cursor-pointer ml-10'/>
+        <div className='flex justify-between mx-2 lg:mx-10'>
+            <Image alt='logo' src={Logo} height={100} width={120} className='cursor-pointer lg:ml-10'/>
             <InputSearch />
-            <div className='relative'>
+            <div className='relative hidden lg:block'>
                 <button onClick={handleDropdown} data-dropdown-toggle='dropdown'>Idioma</button>
                 <div id='dropdown' className='hidden absolute top-10 z-50 right-0 bg-gray-100 language-list'>
                     <ul className='flex flex-col justify-start h-96 overflow-scroll w-96'>

@@ -8,7 +8,7 @@ export const InputSearch = () => {
     const { searchMovie } = useStore()
 
     return (
-        <form className="input-group">
+        <form className="input-group flex items-center lg:items-start">
             <input className="input" id="movie-search" value={search} name="movie-search" onChange={e => setSearch(e.target.value)} placeholder="uiverse@verse.io" autoComplete="off" />
             <input className="input-button" onClick={searchMovie} type='submit' value="Search" />
         </form>

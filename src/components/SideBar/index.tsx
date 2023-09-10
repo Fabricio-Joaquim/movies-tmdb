@@ -7,14 +7,15 @@ interface IProps {
     genereMovies: Genre[]
 }
 
-export const SideBar = ({genereMovies}:IProps) => {
+export const SideBar = ({ genereMovies }: IProps) => {
+    const { changeCatecory } = useStore()
     const { activeID } = useAppStore()
-    const {changeCatecory} = useStore()
+    
     return (
-        <aside className="flex flex-col items-center justify-start h-fit text-center bg-gray-800 border-r-2">
-{            <ul className="flex-col items-center justify-center slow-show-itens-list">
+        <aside className="lg:flex flex-col items-center justify-start hidden h-fit text-center bg-gray-800 border-r-2">
+            {<ul className="flex-col items-center justify-center slow-show-itens-list">
                 {
-                    genereMovies?.map((item:Genre) => {
+                    genereMovies?.map((item: Genre) => {
                         return (
                             <React.Fragment key={item.id}>
                                 <li onClick={() => changeCatecory(item.id)} key={item.id}
