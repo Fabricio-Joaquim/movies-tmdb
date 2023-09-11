@@ -14,15 +14,11 @@ const Header = () => {
     const router = useRouter()
 
     const { approved } = router.query
-    console.log(approved)
 
     const getToken = useCallback(async () => {
         const { data } = await baseAPI.get<RequestToken>('user/login')
-        console.log(data)
-        router.push(`${process.env.NEXT_PUBLIC_AUTH_URL}/${data.request_token}?redirect_to=${redirectBaseEnviriment}`)
+        router.push(`${process.env.NEXT_PUBLIC_AUTH_URL}/${data.request_token}?redirect_to=${process.env.NEX_PUBLIC_REDIRECT_URL}`)
     }, [])
-
-    const redirectBaseEnviriment = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://tmdb-clone-psi.vercel.app'
 
     return (
         <div className='flex justify-between mx-2 lg:mx-10'>
