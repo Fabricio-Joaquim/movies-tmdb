@@ -1,27 +1,28 @@
+import { Result } from '@/interfaces/Movies/IRecommandations'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import { Result } from '@/interfaces/IRecommandations'
 import { Carousel } from '@trendyol-js/react-carousel'
 import {useRouter} from 'next/router'
 import Image from 'next/image'
 import React from 'react'
+
 const Recommendation = ({ recommendations }: { recommendations: Result[] }) => {
 
     if (!recommendations?.length) return null
 
     const router = useRouter()
-
+    const classButtonStyle = 'bg-slate-800 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer'
     return (
         <div className='self-end'>
             <p className='text-base font-light ml-10'>Relacionados</p>
             <Carousel show={3.5} slide={3} swiping={true}
                 className='w-full h-80 carousel-recomandations'
                 rightArrow={
-                    <div className='bg-slate-800 rounded-full w-10 h-10 flex items-center justify-center'>
+                    <div className={classButtonStyle}>
                         <FaArrowRight className='text-white' size={20} />
                     </div>
                 }
                 leftArrow={
-                    <div className='bg-slate-800 rounded-full w-10 h-10 flex items-center justify-center'>
+                    <div className={classButtonStyle}>
                         <FaArrowLeft className='text-white' size={20} />
                     </div>
                 }
