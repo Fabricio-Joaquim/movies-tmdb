@@ -17,7 +17,7 @@ const Header = () => {
 
     const getToken = useCallback(async () => {
         const { data } = await baseAPI.get<RequestToken>('user/login')
-        router.push(`${process.env.NEXT_PUBLIC_AUTH_URL}/${data.request_token}?redirect_to=${process.env.NEX_PUBLIC_REDIRECT_URL}`)
+        router.push(`${process.env.NEXT_PUBLIC_AUTH_URL}/${data.request_token}?redirect_to=${process.env.NEXT_PUBLIC_REDIRECT_URL}`)
     }, [])
 
     return (
