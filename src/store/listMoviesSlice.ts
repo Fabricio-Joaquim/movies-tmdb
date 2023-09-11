@@ -1,17 +1,27 @@
-import { IResultRequest } from '@/interfaces/IRequest'
-import { ICategory } from '@/interfaces/ICategory'
+import { ICategory } from '@interfaces/Movies/ICategory'
+import { IResultRequest } from '@interfaces/IRequest'
 import { APIS } from '@/Service/baseAPI'
 import { StateCreator } from 'zustand'
 
+type typeMovieandCategory = IResultRequest & ICategory
+
 export type movieByCategory = {
     category_ID: number,
-    listMovies: IResultRequest | ICategory,
+    listMovies: typeMovieandCategory
     getMoviesByCategory: (id: number) => void,
     getMovieBySearch: (search: string) => void
 }
 export const listMoviesSlice: StateCreator<movieByCategory> = ((set, get) => ({
     category_ID: 0,
     listMovies: {
+        created_by: '',
+        description: '',
+        favorite_count: 0,
+        id: '',
+        items: [],
+        item_count: 0,
+        name: '',
+        poster_path: '',
         page: 0,
         results: [],
         total_pages: 0,
@@ -26,7 +36,7 @@ export const listMoviesSlice: StateCreator<movieByCategory> = ((set, get) => ({
         }
 
         const result = (await baseAPI.get(`byCategory?id_category=${id}`)).data
-        set({ listMovies: result, category_ID: id })
+        return set({ listMovies: result, category_ID: id })
 
     },
     getMovieBySearch: async (search: string) => {

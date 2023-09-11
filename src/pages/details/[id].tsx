@@ -1,5 +1,5 @@
-import { IRecommandationsList } from '@/interfaces/IRecommandations'
-import { IDescriptionMovie } from '@/interfaces/IDescriptionMovie'
+import { IRecommandationsList } from '@interfaces/Movies/IRecommandations'
+import { IDescriptionMovie } from '@interfaces/IDescriptionMovie'
 import { GetServerSidePropsContext } from 'next'
 import Recommendation from './Recommendation'
 import { FaArrowLeft } from 'react-icons/fa'

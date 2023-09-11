@@ -1,6 +1,6 @@
-import { APIS } from '@/Service/baseAPI'
-import { ICategory } from '@/interfaces/ICategory'
+import { ICategory } from '@interfaces/Movies/ICategory'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { APIS } from '@/Service/baseAPI'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ICategory>) {
 

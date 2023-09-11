@@ -5,7 +5,7 @@ export interface ICategory {
     id:             string;
     items:          Item[];
     item_count:     number;
-    iso_639_1:      ISO639_1;
+    iso_639_1?:      ISO639_1;
     name:           string;
     poster_path:    string;
 }

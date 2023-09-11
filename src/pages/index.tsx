@@ -1,4 +1,4 @@
-import { IResultRequest, Result } from '@/interfaces/IRequest'
+import { IResultRequest } from '@/interfaces/IRequest'
 import { GetServerSidePropsContext } from 'next'
 import { SideBar } from '@/components/SideBar'
 import { Header } from '@/components/Header'
@@ -11,8 +11,8 @@ export default function Home({ result, genereMovies }: { result: IResultRequest,
 
   const { listMovies } = useAppStore()
 
-  const homePage = listMovies?.results?.length ? listMovies.results : result.results
-  const categoryMovies = listMovies?.items?.length ? listMovies.items : homePage
+  const homePage = listMovies?.results?.length ? listMovies?.results : result.results
+  const categoryMovies = listMovies?.items?.length ? listMovies?.items : homePage
 
   
   return (
@@ -22,7 +22,7 @@ export default function Home({ result, genereMovies }: { result: IResultRequest,
         <SideBar genereMovies={genereMovies} />
         <div className="flex min-h-screen p-4 flex-row flex-wrap items-center gap-10 justify-between ${inter.className}">
           {
-            categoryMovies.map((item:Result) => {
+            categoryMovies.map((item) => {
               return (
                 <div key={item.id} className="flex flex-col items-center justify-center">
                   <Card
