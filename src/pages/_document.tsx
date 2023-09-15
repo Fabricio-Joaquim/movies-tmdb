@@ -10,7 +10,7 @@ export default function Document() {
       <body className='flex h-screen'>
         <Main />
         <NextScript />
-        <Analytics />
+        <Analytics debug />
       </body>
     </Html>
   )
