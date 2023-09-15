@@ -8,10 +8,10 @@
     "start": "next start",
     "lint": "next lint --fix",
     "cypress": "cypress open"
-
   },
   "dependencies": {
     "@trendyol-js/react-carousel": "^3.0.2",
+    "@vercel/analytics": "^1.0.2",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "eslint": "8.39.0",
